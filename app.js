@@ -22,9 +22,14 @@ function agregarAmigo() {
                 } else {
                     console.log(amigoIngresado);
                     listaAmigos.push(amigoIngresado);
-                    //let ul = document.getElementById('listaAmigos');
-                    // let ult = document.querySelector('#listaAmigos');
-                    //console.log(ult);
+                    //Mostrar los valores en la pagina web
+                    let ultimoValor = listaAmigos[listaAmigos.length - 1];
+                    let miLista = document.getElementById('listaAmigos');
+                    let nuevoElemento = document.createElement('li');
+                    nuevoElemento.textContent = ultimoValor;
+                    miLista.appendChild(nuevoElemento);
+                    // Limpiar caja de ingreso del nombre del amigo
+
                     limpiarCaja();
                 }
         };
@@ -43,5 +48,12 @@ function sortearAmigo() {
     let amigoElegido = parseInt(Math.random() * cantidadTotalAmigos + 1);
     console.log(amigoElegido);
     console.log(listaAmigos[amigoElegido-1]);
+
+    //Mostrar los valores en la pagina web
+       let ultimoValor = listaAmigos[amigoElegido-1];
+       let miLista = document.getElementById('resultado');
+       let nuevoElemento = document.createElement('li');
+       nuevoElemento.textContent = ultimoValor;
+       miLista.appendChild(nuevoElemento);
     return;
 }
